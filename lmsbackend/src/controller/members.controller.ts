@@ -5,7 +5,7 @@ import { MembersService } from "../model/members.service";
 
 @Controller('/api/v1/members')
 export class MembersController {
-    contructor(private readonly membersService: MembersService
+    constructor(private readonly membersService: MembersService
     ) {}
 
     @Post('/addmember')

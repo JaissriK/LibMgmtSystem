@@ -5,7 +5,7 @@ import { RentalsService } from "../model/rentals.service";
 
 @Controller('/api/v1/rentals')
 export class RentalsController {
-    contructor(private readonly rentalsService: RentalsService,
+    constructor(private readonly rentalsService: RentalsService,
         private jwtService: JwtService
     ) {}
 

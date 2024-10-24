@@ -5,7 +5,7 @@ import { BooksService } from "../model/books.service";
 
 @Controller('/api/v1/books')
 export class BooksController {
-    contructor(private readonly booksService: BooksService
+    constructor(private readonly booksService: BooksService
     ) {}
 
     @Post('/addbook')

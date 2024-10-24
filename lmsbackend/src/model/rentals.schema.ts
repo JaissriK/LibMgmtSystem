@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import * as mongoose from "mongoose";
-import { Books } from "./books.model";
-import { Members } from "./members.model";
+import { Books } from "./books.schema";
+import { Members } from "./members.schema";
 
 export type RentalsDocument = Rentals & Document;
 @Schema()

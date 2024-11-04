@@ -1,33 +1,30 @@
 import styles from "./header.module.css";
+import Search from "./Search";
+import { Link } from "react-router-dom";
 
-export default function Header({ setTab }) {
+export default function Header() {
   return (
     <div className={styles.header}>
-      <span onClick={() => setTab("home")} className={styles.logo}>
-        JK Library
-      </span>
+      <Link to="/" className={styles.logo}>
+        <span>JK Library</span>
+      </Link>
+      <Search />
       <div className={styles.navItems}>
-        <button
-          onClick={() => setTab("books")}
-          className={styles.navButton}
-          type="button"
-        >
-          Books
-        </button>
-        <button
-          onClick={() => setTab("rentals")}
-          className={styles.navButton}
-          type="button"
-        >
-          Rentals
-        </button>
-        <button
-          onClick={() => setTab("members")}
-          className={styles.navButton}
-          type="button"
-        >
-          Members
-        </button>
+        <Link to="/books">
+          <button className={styles.navButton} type="button">
+            Books
+          </button>
+        </Link>
+        <Link to="/rentals">
+          <button className={styles.navButton} type="button">
+            Rentals
+          </button>
+        </Link>
+        <Link to="/members">
+          <button className={styles.navButton} type="button">
+            Members
+          </button>
+        </Link>
       </div>
     </div>
   );

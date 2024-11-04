@@ -1,15 +1,29 @@
-import Header from "./components/Header";
 import "./App.css";
-import { useState } from "react";
-import Content from "./components/Content";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Booklist from "./components/Book/Booklist";
+import Home from "./components/Home";
+import Rentallist from "./components/Rental/Rentallist";
+import Memberlist from "./components/Member/Memberlist";
+import AddBook from "./components/Book/AddBook";
+import AddRentals from "./components/Rental/AddRentals";
+import AddMember from "./components/Member/AddMember";
+import PageNotFound from "./components/PageNotFound";
+import Header from "./components/Header";
 
 export default function App() {
-  const [tab, setTab] = useState("home");
   return (
-    <div className="App">
-      <Header setTab={setTab} />
-      <Content tab={tab} />
-      {/*<AddBook />*/}
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<Booklist />} />
+        <Route path="/newbook" element={<AddBook />} />
+        <Route path="/rentals" element={<Rentallist />} />
+        <Route path="/newrental" element={<AddRentals />} />
+        <Route path="/members" element={<Memberlist />} />
+        <Route path="/newmember" element={<AddMember />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -8,9 +8,13 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-      Welcome! Good day!
-      <br />
-      {date.toDateString()}
+      <div className={styles.welcome}>
+        Welcome, Admin!
+        <br />
+        Good day!
+        <br />
+        {date.toDateString()}
+      </div>
     </div>
   );
 }

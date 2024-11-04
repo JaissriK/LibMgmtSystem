@@ -12,6 +12,7 @@ export default function AddBook() {
 
   return (
     <div>
+      <h3>Addbook</h3>
       <form onSubmit={handleSubmit}>
         <input
           onChange={(e) => setAddbook(e.target.value)}

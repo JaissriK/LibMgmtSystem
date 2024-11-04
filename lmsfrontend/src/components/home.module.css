@@ -13,5 +13,9 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: ;
+}
+
+.welcome {
+  width: 100%;
+  background: rgba(150, 75, 0, 0.5);
 }

@@ -16,9 +16,14 @@
   border: none;
   background-color: #f7ca18;
   padding: 10px 10px;
-  color: black;
+  color: rgb(96, 49, 3);
   font-weight: bold;
   font-size: 18px;
+}
+
+.logo {
+  text-decoration: inherit;
+  color: rgb(96, 49, 3);
 }
 
 .navButton:hover,

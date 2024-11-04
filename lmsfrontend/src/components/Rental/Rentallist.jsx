@@ -1,3 +1,10 @@
 export default function Rentallist() {
-  return <h3>Rentals</h3>;
+  return (
+    <div>
+      <h3>Rentals</h3>
+      <Link to="/newrental">
+        <button>Add new rental</button>
+      </Link>
+    </div>
+  );
 }

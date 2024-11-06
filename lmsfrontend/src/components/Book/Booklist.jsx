@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "../list.module.css";
-import { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Booklist() {
@@ -9,7 +9,7 @@ export default function Booklist() {
   useEffect(() => {
     axios
       .get("http://localhost:3000/book/")
-      .then((response) => setBooklist(response.booklist))
+      .then((response) => setBooklist(response.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 

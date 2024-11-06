@@ -9,9 +9,11 @@ export default function Booklist() {
   useEffect(() => {
     axios
       .get("http://localhost:3000/book/")
-      .then((response) => setBooklist(response.data))
+      .then((response) => setBooklist(response.data.bookData))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  //console.log(booklist, setBooklist);
 
   return (
     <div className={styles.layout}>
@@ -27,8 +29,9 @@ export default function Booklist() {
         </h3>
         <div>
           {booklist.map((item) => (
-            <div key={item.id}>
-              {item.bookname} {item.authorname} {item.copies}
+            <div key={item._id}>
+              {item.bookid} {item.bookname} {item.authorname}
+              {item.copies}
             </div>
           ))}
         </div>

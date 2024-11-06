@@ -5,6 +5,7 @@ import axios from "axios";
 
 export default function AddBook() {
   const [addbook, setAddbook] = useState({
+    bookid: "",
     bookname: "",
     authorname: "",
     copies: "",
@@ -17,7 +18,7 @@ export default function AddBook() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(addbook);
     try {
       const response = await axios.post("http://localhost:3000/book/", {
         addbook,
@@ -38,6 +39,14 @@ export default function AddBook() {
           </Link>
         </h3>
         <form onSubmit={handleSubmit} className={styles.form}>
+          <label>Book ID</label>
+          <input
+            className={styles.ipField}
+            onChange={handleInput}
+            type="text"
+            name="bookid"
+            value={addbook.bookid}
+          />
           <label>Book Name</label>
           <input
             className={styles.ipField}

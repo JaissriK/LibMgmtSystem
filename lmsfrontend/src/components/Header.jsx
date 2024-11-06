@@ -15,14 +15,14 @@ export default function Header() {
             Books
           </button>
         </Link>
-        <Link to="/rentals">
-          <button className={styles.navButton} type="button">
-            Rentals
-          </button>
-        </Link>
         <Link to="/members">
           <button className={styles.navButton} type="button">
             Members
+          </button>
+        </Link>
+        <Link to="/rentals">
+          <button className={styles.navButton} type="button">
+            Rentals
           </button>
         </Link>
       </div>

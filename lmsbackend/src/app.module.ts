@@ -13,19 +13,27 @@ import { RentalsService } from './service/rentals.service';
 import { Books, BooksSchema } from './model/books.schema';
 import { Members, MembersSchema } from './model/members.schema';
 import { Rentals, RentalsSchema } from './model/rentals.schema';
+import { BookModule } from './book/book.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/Stream'),
-    MongooseModule.forFeature([{name: Books.name, schema: BooksSchema }]),
-    MongooseModule.forFeature([{name: Members.name, schema: MembersSchema }]),
-    MongooseModule.forFeature([{name: Rentals.name, schema: RentalsSchema }]),
+    MongooseModule.forFeature([{ name: Books.name, schema: BooksSchema }]),
+    MongooseModule.forFeature([{ name: Members.name, schema: MembersSchema }]),
+    MongooseModule.forFeature([{ name: Rentals.name, schema: RentalsSchema }]),
 
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
+
+    BookModule,
   ],
-  controllers: [AppController, BooksController, MembersController, RentalsController],
+  controllers: [
+    AppController,
+    BooksController,
+    MembersController,
+    RentalsController,
+  ],
   providers: [AppService, BooksService, MembersService, RentalsService],
 })
 export class AppModule {}

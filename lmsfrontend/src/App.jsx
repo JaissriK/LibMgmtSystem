@@ -18,10 +18,10 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<Booklist />} />
         <Route path="/newbook" element={<AddBook />} />
-        <Route path="/rentals" element={<Rentallist />} />
-        <Route path="/newrental" element={<AddRentals />} />
         <Route path="/members" element={<Memberlist />} />
         <Route path="/newmember" element={<AddMember />} />
+        <Route path="/rentals" element={<Rentallist />} />
+        <Route path="/newrental" element={<AddRentals />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

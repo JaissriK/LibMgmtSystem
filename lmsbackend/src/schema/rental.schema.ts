@@ -3,19 +3,22 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 @Schema()
 export class Rental {
   @Prop()
-  bookname: string;
+  rentalid: string;
 
   @Prop()
-  membername: string;
+  memberid: string;
 
   @Prop()
-  rentaldate: number;
+  bookid: string;
+
+  @Prop({ default: Date.now() })
+  rentstart: Date;
 
   @Prop()
-  rentalperiod: number;
+  rentend: Date;
 
   @Prop()
-  rentalstatus: boolean;
+  rentreturn: boolean;
 }
 
 export const RentalSchema = SchemaFactory.createForClass(Rental);

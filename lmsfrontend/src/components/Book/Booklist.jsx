@@ -10,7 +10,7 @@ export default function Booklist() {
     axios
       .get("http://localhost:3000/book/")
       .then((response) => setBooklist(response.data.bookData))
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => console.error("Error fetching book data:", error));
   }, []);
 
   //console.log(booklist, setBooklist);
@@ -27,13 +27,24 @@ export default function Booklist() {
             <h5>Back</h5>
           </Link>
         </h3>
-        <div>
-          {booklist.map((item) => (
-            <div key={item._id}>
-              {item.bookid} {item.bookname} {item.authorname}
-              {item.copies}
-            </div>
-          ))}
+        <div className={styles.tablediv}>
+          <table className={styles.table}>
+            <tr className={styles.tableheader}>
+              <th>Book ID</th>
+              <th>Book Title</th>
+              <th>Author</th>
+              <th>Copies</th>
+            </tr>
+            <tr></tr>
+            {booklist.map((item) => (
+              <tr key={item._id}>
+                <td>{item.bookid}</td>
+                <td>{item.bookname}</td>
+                <td>{item.authorname}</td>
+                <td>{item.copies}</td>
+              </tr>
+            ))}
+          </table>
         </div>
       </div>
     </div>

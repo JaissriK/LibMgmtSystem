@@ -1,4 +1,9 @@
-import { IsNotEmpty, IsNumber, IsString, MaxLength } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumberString,
+  IsString,
+  MaxLength,
+} from 'class-validator';
 
 export class CreateBookDto {
   @IsString()
@@ -15,7 +20,7 @@ export class CreateBookDto {
   @IsNotEmpty()
   readonly authorname: string;
 
-  @IsNumber()
+  @IsNumberString()
   @IsNotEmpty()
   readonly copies: number;
 }

@@ -8,7 +8,7 @@ export default function AddBook() {
     bookid: "",
     bookname: "",
     authorname: "",
-    copies: "",
+    copies: 0,
   });
 
   const handleInput = (e) => {
@@ -20,13 +20,12 @@ export default function AddBook() {
     e.preventDefault();
     console.log(addbook);
     try {
-      const response = await axios.post("http://localhost:3000/book/", {
-        addbook,
-      });
+      const response = await axios.post("http://localhost:3000/book/", addbook);
       console.log("Data created:", response.data);
     } catch (error) {
-      console.error("Error creating data:", error);
+      console.error("Error creating book data:", error);
     }
+    setAddbook({ bookid: "", bookname: "", authorname: "", copies: 0 });
   };
 
   return (
@@ -47,7 +46,7 @@ export default function AddBook() {
             name="bookid"
             value={addbook.bookid}
           />
-          <label>Book Name</label>
+          <label>Book Title</label>
           <input
             className={styles.ipField}
             onChange={handleInput}
@@ -67,7 +66,7 @@ export default function AddBook() {
           <input
             className={styles.ipField}
             onChange={handleInput}
-            type="text"
+            type="number"
             name="copies"
             value={addbook.copies}
           />

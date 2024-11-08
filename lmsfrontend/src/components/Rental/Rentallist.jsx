@@ -23,7 +23,7 @@ export default function Rentallist() {
             <button className={styles.addNewButton}>Add new rental</button>
           </Link>
           <Link to="/" className={styles.backButton}>
-            <h5>Back</h5>
+            <h5>Cancel</h5>
           </Link>
         </h3>
         <div className={styles.tablediv}>
@@ -35,6 +35,8 @@ export default function Rentallist() {
               <th>Rent Start</th>
               <th>Rent End</th>
               <th>Returned?</th>
+              <th>Modify</th>
+              <th>Delete</th>
             </tr>
             <tr></tr>
             {rentallist.map((ritem) => (
@@ -45,6 +47,16 @@ export default function Rentallist() {
                 <td>{dateFormat(ritem.rentstart, "dd/mm/yyyy")}</td>
                 <td>{dateFormat(ritem.rentend, "dd/mm/yyyy")}</td>
                 <td>{ritem.rentreturn.toString()}</td>
+                <td>
+                  <button className={styles.removeButton} type="button">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button className={styles.removeButton} type="button">
+                    Remove
+                  </button>
+                </td>
               </tr>
             ))}
           </table>

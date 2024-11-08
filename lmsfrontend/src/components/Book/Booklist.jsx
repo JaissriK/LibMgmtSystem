@@ -24,7 +24,7 @@ export default function Booklist() {
             <button className={styles.addNewButton}>Add new book</button>
           </Link>
           <Link to="/" className={styles.backButton}>
-            <h5>Back</h5>
+            <h5>Cancel</h5>
           </Link>
         </h3>
         <div className={styles.tablediv}>
@@ -34,6 +34,7 @@ export default function Booklist() {
               <th>Book Title</th>
               <th>Author</th>
               <th>Copies</th>
+              <th>Modify</th>
             </tr>
             <tr></tr>
             {booklist.map((item) => (
@@ -42,6 +43,13 @@ export default function Booklist() {
                 <td>{item.bookname}</td>
                 <td>{item.authorname}</td>
                 <td>{item.copies}</td>
+                <td>
+                  <Link to={`/books/${item.bookid}/edit`}>
+                    <button className={styles.editButton} type="button">
+                      Edit
+                    </button>
+                  </Link>
+                </td>
               </tr>
             ))}
           </table>

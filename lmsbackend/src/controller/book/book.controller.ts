@@ -35,7 +35,7 @@ export class BookController {
     }
   }
 
-  @Put('/:id')
+  @Put('/:_id')
   async updateBook(
     @Res() response,
     @Param('id') bookId: string,
@@ -68,7 +68,7 @@ export class BookController {
     }
   }
 
-  @Get('/:id')
+  @Get('/:_id')
   async getBook(@Res() response, @Param('id') bookId: string) {
     try {
       const existingBook = await this.bookService.getBook(bookId);
@@ -81,7 +81,7 @@ export class BookController {
     }
   }
 
-  @Delete('/:id')
+  @Delete('/:_id')
   async deleteBook(@Res() response, @Param('id') bookId: string) {
     try {
       const deletedBook = await this.bookService.deleteBook(bookId);

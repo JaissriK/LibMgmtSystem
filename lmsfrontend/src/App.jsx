@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Rentallist from "./components/Rental/Rentallist";
 import Memberlist from "./components/Member/Memberlist";
 import AddBook from "./components/Book/AddBook";
+import EditBook from "./components/Book/EditBook";
 import AddRentals from "./components/Rental/AddRentals";
 import AddMember from "./components/Member/AddMember";
 import PageNotFound from "./components/PageNotFound";
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<Booklist />} />
         <Route path="/newbook" element={<AddBook />} />
+        <Route path="/books/:bookid/edit" element={<EditBook />} />
         <Route path="/members" element={<Memberlist />} />
         <Route path="/newmember" element={<AddMember />} />
         <Route path="/rentals" element={<Rentallist />} />

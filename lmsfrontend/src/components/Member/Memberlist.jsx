@@ -22,7 +22,7 @@ export default function Memberlist() {
             <button className={styles.addNewButton}>Add new member</button>
           </Link>
           <Link to="/" className={styles.backButton}>
-            <h5>Back</h5>
+            <h5>Cancel</h5>
           </Link>
         </h3>
         <div className={styles.tablediv}>
@@ -32,6 +32,8 @@ export default function Memberlist() {
               <th>Member Name</th>
               <th>Email</th>
               <th>Phone</th>
+              <th>Modify</th>
+              <th>Delete</th>
             </tr>
             <tr></tr>
             {memberlist.map((mitem) => (
@@ -40,6 +42,16 @@ export default function Memberlist() {
                 <td>{mitem.membername}</td>
                 <td>{mitem.email}</td>
                 <td>{mitem.phone}</td>
+                <td>
+                  <button className={styles.removeButton} type="button">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button className={styles.removeButton} type="button">
+                    Remove
+                  </button>
+                </td>
               </tr>
             ))}
           </table>
